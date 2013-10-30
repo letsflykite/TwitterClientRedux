@@ -14,6 +14,9 @@ public class User{
 	String screenName;
 	String userName;
 	String profileImageUrl;
+	private int followersCount;
+	private int friendsCount;
+	private String description;
 	
 	public User() {
 		super();
@@ -41,13 +44,13 @@ public class User{
 //        return getInt("statuses_count");
 //    }
 //
-//    public int getFollowersCount() {
-//        return getInt("followers_count");
-//    }
-//
-//    public int getFriendsCount() {
-//        return getInt("friends_count");
-//    }
+    public int getFollowersCount() {
+        return this.followersCount;
+    }
+
+    public int getFriendsCount() {
+        return this.friendsCount;
+    }
 
     public static User fromJson(JSONObject json) {
         User u = new User();
@@ -56,6 +59,9 @@ public class User{
 //            u.jsonObject = json;
             u.screenName = json.getString("screen_name");
             u.userName = json.getString("name");
+            u.followersCount = json.getInt("followers_count");
+            u.friendsCount = json.getInt("friends_count");
+            u.description = json.getString("description");
             u.profileImageUrl = json.getString("profile_image_url");
         } catch (Exception e) {
             e.printStackTrace();
@@ -71,6 +77,10 @@ public class User{
 //            return null;
 //        }
 //    }
+	public CharSequence getTagline() {
+		// TODO Auto-generated method stub
+		return this.description;
+	}
     
 //    private long getLong(String name) {
 //        try {

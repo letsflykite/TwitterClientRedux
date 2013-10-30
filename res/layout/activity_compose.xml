@@ -25,8 +25,17 @@
         android:layout_alignTop="@+id/ivMyProfilePicture"
         android:layout_toRightOf="@+id/ivMyProfilePicture" />
 
-    <!--  android:textStyle="bold"
-        android:textSize="16sp" -->
+    <TextView
+        android:id="@+id/tvCharLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvMyScreenName"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/ivMyProfilePicture"
+        android:text="tweet character count"
+        android:textColor="#A8A8A8"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold" />
         
     <View android:id="@+id/hline_1" 
 		android:background="#cccccc" 

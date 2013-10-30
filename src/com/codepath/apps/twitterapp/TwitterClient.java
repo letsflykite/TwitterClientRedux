@@ -47,21 +47,16 @@ public class TwitterClient extends OAuthBaseClient {
         getClient().get(apiUrl, params, handler);
     }
     
-//    public void getHomeTimeline(AsyncHttpResponseHandler handler) {
-//      String apiUrl = getApiUrl("statuses/home_timeline.json");//base+resource url
-//      getClient().get(apiUrl, null, handler);
-//    }
+    public void getMentions(AsyncHttpResponseHandler handler) {
+      String apiUrl = getApiUrl("statuses/mentions_timeline.json");//base+resource url
+      getClient().get(apiUrl, null, handler);
+    }
     
-    // CHANGE THIS
-    // DEFINE METHODS for different API endpoints here
-//    public void getInterestingnessList(AsyncHttpResponseHandler handler) {
-//        String apiUrl = getApiUrl("?nojsoncallback=1&method=flickr.interestingness.getList");
-//        // Can specify query string params directly or through RequestParams.
-//        RequestParams params = new RequestParams();
-//        params.put("format", "json");
-//        client.get(apiUrl, params, handler);
-//    }
-
+    public void getUser(RequestParams params, AsyncHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("users/show.json");
+        client.get(apiUrl, params, handler);
+    }
+    
     public void getCurrentUser(RequestParams params, AsyncHttpResponseHandler handler) {
         String apiUrl = getApiUrl("account/verify_credentials.json");
         client.get(apiUrl, params, handler);
@@ -70,5 +65,10 @@ public class TwitterClient extends OAuthBaseClient {
     public void postStatusUpdate(RequestParams params, AsyncHttpResponseHandler handler) {
         String apiUrl = getApiUrl("statuses/update.json");
         client.post(apiUrl, params, handler);
+    }
+    
+    public void getUserTimeline(RequestParams params, AsyncHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("statuses/user_timeline.json");
+        client.get(apiUrl, params, handler);
     }
 }

@@ -9,10 +9,13 @@
     <string name="profile_image">Profile Image</string>
     <string name="refresh_menu_label">Refresh</string>
     <string name="compose_menu_label">Compose</string>
-    <string name="title_activity_time_line">TimeLineActivity</string>
+    <string name="title_activity_time_line">Bear\'s Twitter App</string>
     <string name="title_activity_compose_tweet"></string>
     <string name="user_image_label">User Image</string>
     <string name="compose_tweet_hint">What\'s happening?</string>
     <string name="title_activity_compose">ComposeActivity</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="profile_menu_label">Profile</string>
+    <string name="title_activity_dummy">DummyActivity</string>
 
 </resources>
